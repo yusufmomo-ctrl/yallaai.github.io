@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Yalla</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+<!-- home page -->
+<div id="home-screen" class="home-screen">
+  <div class="home-content">
+    <h1 class="yalla-title">Yalla AI</h1>
+    <p class="yall-subtitle">Your intelligent study companion</p>
+    
+    <div class="feature-grid">
+
+      <div class="feature-card" id="task-card">
+        <div class="card-icon">📝</div>
+        <h2>Task Keeper</h2>
+        <p>Organize and manage your tasks with categories and deadlines</p>
+      </div>
+
+      <div class="feature-card" id="flashcard-card">
+        <div class="card-icon">🃏</div>
+        <h2>Flashcard Generator</h2>
+        <p>Generate practice flashcards from your notes instantly</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+    <!-- task tracker screen -->
+    <div id="tasks-screen" class="full-screen hidden">
+      <button id="home-btn-tasks" class="home-btn">← Home</button>
+      <div class="tasks-container">
+        <h1>Task Keeper</h1>
+        <p id="counter" class="counter">0 tasks remaining</p>
+
+        <div class="input-row">
+          <select id="category-select">
+            <option value="Low">Low Priority</option>
+            <option value="Medium">Medium Priority</option>
+            <option value="High">High Priority</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="text" id="task-input" placeholder="Add a new task" />
+          <input type="date" id="deadline-input" />
+          <button id="add-btn">Add</button>
+        </div>
+   
+        <ul id="task-list"></ul>
+      </div>
+    </div>
+
+    <!-- flashcard generator screen -->
+    <div id="flashcard-screen-wrapper" class="full-screen hidden">
+      <button id="home-btn-flashcards" class="home-btn">← Home</button>
+
+      <div class="notes-container">
+        <h1 class="flashcard-title">Flashcard Generator</h1>
+        <div class="notes-controls">
+          <textarea id="flashcard-notes-input" placeholder="Paste your notes here"></textarea>
+          <button id="generate-flashcards-btn">Generate Flashcards</button>
+        </div>
+      </div>
+
+      <div id="flashcard-study-screen" class="exam-screen hidden">
+        <div class="exam-container">
+          <div class="exam-header">
+            <h2 class="flashcard-title">Study Flashcards</h2>
+            <p id="flashcard-progress">Card 1 of 5</p>
+          </div>
+
+          <div class="exam-content flashcard-content">
+            <div id="flashcard-box" class="flashcard-box">
+              <div id="flashcard-front" class="flashcard-face">
+                Front
+              </div>
+              <div id="flashcard-back" class="flashcard-face hidden">
+                Back
+              </div>
+            </div>
+          </div>
+
+          <div class="exam-footer">
+            <button id="flashcard-back-to-notes-btn">Back to Notes</button>
+            <button id="flip-card-btn">Flip Card</button>
+            <button id="next-flashcard-btn">Next Card</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
